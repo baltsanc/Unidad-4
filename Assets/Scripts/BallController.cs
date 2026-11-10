@@ -6,12 +6,19 @@ public class BallController : MonoBehaviour
     public float impulseForce = 3f;
     
     public bool ignoreNextCollision;
+    private Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+    }
 
     void OnCollisionEnter(Collision collision)
     {        
         if (ignoreNextCollision) return;
 
-        GameManager.singleton.AddScore(1);        
+        DeathPart deathPart = collision.transform.GetComponent<DeathPart>();
+        if (deathPart) GameManager.singleton.RestartLevel();
 
         rb.linearVelocity = Vector3.zero;
         rb.AddForce(Vector3.up * impulseForce, ForceMode.Impulse);
@@ -23,6 +30,11 @@ public class BallController : MonoBehaviour
     private void AllowNextCollision()
     {
         ignoreNextCollision = false;
+    }
+
+    public void ResetBall()
+    {
+        transform.position = startPosition;
     }
 
 
