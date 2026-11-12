@@ -198,11 +198,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &303547475 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-  m_PrefabInstance: {fileID: 359346807}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,67 +350,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CamController
   ball: {fileID: 1528679516}
   offset: 0
---- !u!1001 &359346807
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1318723585}
-    m_Modifications:
-    - target: {fileID: 1379594137061451308, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4811113371463920169, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_Name
-      value: HelixTop (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.701
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.72981745
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.68364215
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -86.258
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +692,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 921008181}
-  - {fileID: 303547475}
   - {fileID: 6642375485159207911}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -774,6 +707,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177d624bbe64c6027977f01d5eb46b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HelixController
+  topTransform: {fileID: 921008181}
+  goalTransform: {fileID: 6642375485159207911}
+  helixLevelPrefab: {fileID: 4811113371463920169, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
+  allStages:
+  - {fileID: 11400000, guid: fdde640eecd455eed9a4ffade738dc76, type: 2}
+  helixDistance: 0
 --- !u!1 &1528679509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,9 +1336,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2434128930917503216, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4811113371463920169, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
       propertyPath: m_Name
       value: HelixTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017865650631932982, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6642375486461992985, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
       propertyPath: m_LocalPosition.x
