@@ -712,6 +712,8 @@ MonoBehaviour:
   helixLevelPrefab: {fileID: 4811113371463920169, guid: 2bf05f892c2b2d988b66bb724e01e4c6, type: 3}
   allStages:
   - {fileID: 11400000, guid: fdde640eecd455eed9a4ffade738dc76, type: 2}
+  - {fileID: 11400000, guid: b17718bcd928da12d80a39a1587a11dc, type: 2}
+  - {fileID: 11400000, guid: 417a2454d2e33111e9ceb8af80fa2aea, type: 2}
   helixDistance: 0
 --- !u!1 &1528679509
 GameObject:
