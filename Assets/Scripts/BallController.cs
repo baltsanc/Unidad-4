@@ -16,12 +16,10 @@ public class BallController : MonoBehaviour
     private bool isSuperSpeedActive;
     public int perfectPassCount = 3;
 
-    // CAMBIO DE COLOR
     private Renderer ballRenderer;
     private Color originalColor;
     public Color superSpeedColor = Color.red;
 
-    // ESTELA DE LA BOLA
     private TrailRenderer ballTrail;
 
     private void Start()
@@ -31,10 +29,8 @@ public class BallController : MonoBehaviour
         ballRenderer = GetComponent<Renderer>();
         originalColor = ballRenderer.material.color;
 
-        // Obtener el Trail Renderer
         ballTrail = GetComponent<TrailRenderer>();
 
-        // Mantener la estela desactivada al inicio
         ballTrail.emitting = false;
     }
 
@@ -62,13 +58,10 @@ public class BallController : MonoBehaviour
 
         perfectPass = 0;
 
-        // Desactivar supervelocidad
         isSuperSpeedActive = false;
 
-        // Recuperar color original
         ballRenderer.material.color = originalColor;
 
-        // Desactivar estela
         ballTrail.emitting = false;
         ballTrail.Clear();
     }
@@ -79,10 +72,8 @@ public class BallController : MonoBehaviour
         {
             isSuperSpeedActive = true;
 
-            // Cambiar color a rojo
             ballRenderer.material.color = superSpeedColor;
 
-            // Activar estela
             ballTrail.Clear();
             ballTrail.emitting = true;
 
@@ -99,7 +90,6 @@ public class BallController : MonoBehaviour
     {
         transform.position = startPosition;
 
-        // Restaurar color y estela
         ballRenderer.material.color = originalColor;
 
         ballTrail.emitting = false;
